@@ -438,7 +438,7 @@ workflows:
           requires:
             - orb-tools/pack
       - orb-tools/publish-dev:
-          orb-name: circleci/aws-eks
+          orb-name: know-it-global/aws-eks-orb
           context: orb-publishing
           requires:
             - queue/block_workflow
@@ -665,7 +665,7 @@ workflows:
             - pre-orb-promotion-check
           filters: *orb_promotion_filters
       - promote-orb-into-production:
-          orb-name: circleci/aws-eks
+          orb-name: know-it-global/aws-eks-orb
           orb-ref: dev:${CIRCLE_SHA1:0:7}
           context: orb-publishing
           requires:
